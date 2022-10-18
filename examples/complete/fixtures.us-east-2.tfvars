@@ -8,13 +8,13 @@ stage = "test"
 
 name = "suite"
 
-instance_type = "t2.small"
+instance_type = "t2.large"
 
 health_check_type = "EC2"
 
 wait_for_capacity_timeout = "10m"
 
-max_size = 3
+max_size = 7
 
 min_size = 2
 
@@ -26,8 +26,8 @@ cpu_utilization_low_threshold_percent = 20
 
 cluster_name = "eg-test-eks-workers-cluster"
 
-cluster_endpoint = ""
-
-cluster_certificate_authority_data = ""
+kubernetes_version = "1.22"
 
 cluster_security_group_ingress_enabled = false
+
+mixed_instance_policy_weighted_capacity = "3"

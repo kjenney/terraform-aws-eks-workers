@@ -8,20 +8,14 @@ variable "availability_zones" {
   description = "List of availability zones"
 }
 
+variable "kubernetes_version" {
+  type        = string
+  description = "The version of Kubernetes running on the EKS cluster"
+}
 
 variable "cluster_name" {
   type        = string
   description = "The name of the EKS cluster"
-}
-
-variable "cluster_endpoint" {
-  type        = string
-  description = "EKS cluster endpoint"
-}
-
-variable "cluster_certificate_authority_data" {
-  type        = string
-  description = "The base64 encoded certificate data required to communicate with the cluster"
 }
 
 variable "cluster_security_group_ingress_enabled" {
@@ -73,4 +67,9 @@ variable "cpu_utilization_high_threshold_percent" {
 variable "cpu_utilization_low_threshold_percent" {
   type        = number
   description = "The value against which the specified statistic is compared"
+}
+
+variable "mixed_instance_policy_weighted_capacity" {
+  type        = string
+  description = "The weighted capacity of the override on the mixed instance policy"
 }
